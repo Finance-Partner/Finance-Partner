@@ -48,17 +48,7 @@ public class JwtService {
                 .setExpiration(Date.from(Instant.now().plus(expirationHours, ChronoUnit.HOURS)))    // JWT 토큰 만료 시간
                 .compact(); // JWT 토큰 생성
     }
-//
-//    public String createJwt(Long id){
-//        Date now = new Date();
-//        return Jwts.builder()
-//                .setHeaderParam("type","jwt")
-//                .claim("id", id)
-//                .setIssuedAt(now)
-//                .setExpiration(new Date(System.currentTimeMillis()+1*(1000*60*60*3))) // 3시간
-//                .signWith(SignatureAlgorithm.HS256, SecretKey.JWT_SECRET_KEY)
-//                .compact();
-//    }
+
 
     //헤더에서 토큰 추출
     public String getJwt(){
